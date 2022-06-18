@@ -1,0 +1,29 @@
+{
+  "name": "usertemplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test1": "nodemon --exec ./node_modules/.bin/ts-node -- ./lib/test/test1.ts",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./lib/index.ts",
+    "build": "tsc",
+    "upe": "npm update erpc",
+    "pu": "npm version patch && npm run build && npm publish",
+    "bro": "browserify -r ./dist/index.js:usertemplate > ./assets/index.js -d ",
+    "build2": "npm run build && npm run bro"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "erpc": "*"
+  }
+}
