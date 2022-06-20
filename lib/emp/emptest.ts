@@ -6,7 +6,7 @@ interface IEmptest {
   test1(arg: any, callback: (e: any) => void): any;
   test2(arg: any, callback: (e: any) => void): any;
 }
-const emptest: IEmptest = (_sioSocket: iosSocket) => {
+export const emptest: IEmptest = (_sioSocket: iosSocket) => {
   //这里是进行监听
   _sioSocket.on("test1", emptest.test1);
   _sioSocket.on("test2", emptest.test2);
@@ -26,4 +26,3 @@ emptest.test2 = (arg: any, callback: (e: any) => void) => {
   //callback返回值应当是一个具体的类型
   callback("test2 回调内容");
 };
-export default emptest;
